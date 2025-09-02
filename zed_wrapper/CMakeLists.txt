@@ -2,6 +2,15 @@ cmake_minimum_required(VERSION 3.5)
 
 project(zed_wrapper)
 
+# Check if ZED SDK is installed
+find_package(ZED 4.0 CONFIG QUIET)
+if(NOT ZED_FOUND)
+  message(STATUS "ZED SDK 4.0 or later not found. Skipping zed_wrapper build.")
+  return()
+endif()
+# Only proceed if ZED SDK is found
+message(STATUS "ZED SDK found: ${ZED_VERSION}. Building zed_wrapper...")
+
 ## Generate symbols for IDE indexer
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+07-02-2025
+----------
+- Bypass the package build if ZDE SDK not available
+
 07-29-2024
 ----------
 - Fix wrong dynamic parameters initialization
